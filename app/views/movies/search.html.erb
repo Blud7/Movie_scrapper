@@ -1,0 +1,21 @@
+<div class="center jumbotron">
+			
+	<h3> La recherche a retourné les résultats suivants :</h3>
+
+		<% if @search_results[:results][0].nil? %>
+			<p> Pas de résultat. </p>
+				<% else %>
+
+					<% @search_results[:results].each do |key| %>
+							<% begin %>
+						    <h4> <b> Titre : </b> <%= key.title %> </h4>
+							
+							<h4> <b> Date de réalisation : </b>  <%= key.release_date %> </h4><br> 
+
+						    <img src= <%= "https://image.tmdb.org/t/p/w200/"+key.poster_path %>> <br><br><br>
+							  
+					<% rescue %>
+				<% end %>
+			<% end %>
+		<% end %>		
+</div>

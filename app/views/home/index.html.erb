@@ -1,0 +1,13 @@
+<div class="center jumbotron">
+	<div class="container">
+			
+		<h3>Rechercher un film :</h3>
+			
+			<%= form_for(:post, url: search_path) do |f| %>
+			   <%= f.label :name %>
+			    <%= f.text_field :name %>
+			    <%= f.submit "Rechercher", class: "btn btn-primary" %>
+			    <% end %>
+		</div> 
+	</div>
+</div>
